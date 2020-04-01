@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Check Multiple By Holding Shift Key</title>
+	<link rel="stylesheet" type="text/css" href="checkMultiple.css">
+</head>
+<body>
+	<div class="container">
+		<div class="item">
+			<input type="checkbox" name="checkbox">
+			<span>This is an inbox layout</span>
+		</div>
+
+		<div class="item">
+			<input type="checkbox" name="checkbox">
+			<span>Check one item</span>
+		</div>
+
+		<div class="item">	
+			<input type="checkbox" name="checkbox">
+			<span>Hold down youe Shift key</span>
+		</div>
+		
+		<div class="item">	
+			<input type="checkbox" name="checkbox">
+			<span>Check a lower item</span>
+		</div>
+
+		<div class="item">
+			<input type="checkbox" name="checkbox">
+			<span>Everthing inbetween should also be set to checked</span>
+		</div>
+		
+		<div class="item">	
+			<input type="checkbox" name="checkbox">
+			<span>Try do it with out any libraries</span>
+		</div>	
+			
+		<div class="item">
+			<input type="checkbox" name="checkbox">
+			<span>Just regular JavaScript</span>
+		</div>
+		
+		<div class="item">	
+			<input type="checkbox" name="checkbox">
+			<span>Don't forget to tweet your result </span>
+		</div>	
+
+	</div>
+
+<script>
+	const containers = document.querySelectorAll('.container input[type="checkbox"]')
+
+	let lastChecked;
+	let isBetween = false;
+	function handleCheck(e){
+		if(e.shiftKey && this.checked){
+			containers.forEach(container => {
+				console.log(container)
+				if(container == this || container == lastChecked){
+					isBetween = !isBetween
+				}
+
+				if(isBetween){
+					container.checked = true; 
+				}
+			})
+		}
+
+		lastChecked = this;	
+	}
+
+
+	containers.forEach(container => container.addEventListener("click", handleCheck))
+
+</script>
+</body>
+</html>

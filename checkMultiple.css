@@ -1,0 +1,42 @@
+html {
+	box-sizing: border-box;
+	background: #b8ffff;
+	font-size: 20px;
+}
+
+.container {
+	background: white;
+	max-width: 450px;
+	border-radius: 3px;
+	margin: 50px auto;
+	padding: 15px;
+	box-shadow: 20px 20px 0 rgba(0 0 0 0.1);
+}
+input {
+	
+	margin-top: 20px;
+	
+}
+
+.item {
+	border-bottom: 1px solid #F1F1F1;
+	display: flex;
+	padding: 10px;
+}
+.item:last-child {
+	border-bottom: 0;
+}
+input:checked + span {
+	text-decoration: line-through;
+}
+
+span {
+      margin: 0;
+      padding: 20px;
+      transition: background 0.2s;
+      flex: 1;
+      font-family: 'helvetica neue';
+      font-size: 20px;
+      font-weight: 200;
+      border-left: 1px solid #D1E2FF;
+    }  
